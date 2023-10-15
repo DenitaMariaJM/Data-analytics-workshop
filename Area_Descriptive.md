@@ -1,23 +1,5 @@
 
 
-```{r setup, include=FALSE}
-library(flexdashboard)
-library(shiny)
-library(dplyr)
-library(ggplot2)
-#library(googleVis)
-```
-
-```{r global, include=FALSE}
-# load data in 'global' chunk so it can be shared by all users of the dashboard
-df=read.csv("Arya_data_RCF.csv",header = TRUE)
-library(dplyr)
-library(ggplot2)
-source("http://pcwww.liv.ac.uk/~william/R/crosstab.r")
-df$Agegroup <- cut(df$X2..Age.completed.years., breaks = c(-Inf,35,45,Inf), labels = c("Less than 35 years","35-45 years","More than 45 years"))
-df$X1..Name.of.the.Tribe=as.factor(df$X1..Name.of.the.Tribe)
-```
-
 Column {.sidebar}
 -----------------------------------------------------------------------
 
